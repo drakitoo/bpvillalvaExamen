@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bpvillalvaExamen.Views.RegistroPage"
+             BackgroundColor="#F4F6FA"
+             Title="Registro">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="12"
+                             MaximumWidthRequest="760"
+                             HorizontalOptions="Center">
+            <Label x:Name="UsuarioConectadoLabel"
+                   FontSize="14"
+                   TextColor="#666666"
+                   HorizontalTextAlignment="Center" />
+            <Label Text="REGISTRO"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#C62828"
+                   HorizontalTextAlignment="Center" />
+
+            <Border BackgroundColor="White" Padding="18" Stroke="#E5E7EB"
+                    StrokeShape="RoundRectangle 18">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                      ColumnDefinitions="125,*"
+                      RowSpacing="10"
+                      ColumnSpacing="10">
+                    <Label Grid.Row="0" Text="Fecha:" TextColor="#202020" VerticalOptions="Center" />
+                    <Border Grid.Row="0" Grid.Column="1" BackgroundColor="#F3F4F6"
+                            Stroke="#B8BEC8" StrokeThickness="1" StrokeShape="RoundRectangle 8" Padding="4,0">
+                        <DatePicker x:Name="FechaPicker" TextColor="#202020" BackgroundColor="#F3F4F6" />
+                    </Border>
+                    <Label Grid.Row="1" Text="País:" TextColor="#202020" VerticalOptions="Center" />
+                    <Border Grid.Row="1" Grid.Column="1" BackgroundColor="#F3F4F6"
+                            Stroke="#B8BEC8" StrokeThickness="1" StrokeShape="RoundRectangle 8" Padding="4,0">
+                        <Picker x:Name="PaisPicker" Title="Selecciona un país"
+                                TextColor="#202020" TitleColor="#777777" BackgroundColor="#F3F4F6"
+                                SelectedIndexChanged="PaisPicker_SelectedIndexChanged" />
+                    </Border>
+                    <Label Grid.Row="2" Text="Ciudad:" TextColor="#202020" VerticalOptions="Center" />
+                    <Border Grid.Row="2" Grid.Column="1" BackgroundColor="#F3F4F6"
+                            Stroke="#B8BEC8" StrokeThickness="1" StrokeShape="RoundRectangle 8" Padding="4,0">
+                        <Picker x:Name="CiudadPicker" Title="Selecciona una ciudad"
+                                TextColor="#202020" TitleColor="#777777" BackgroundColor="#F3F4F6" />
+                    </Border>
+                    <Label Grid.Row="3" Text="Monto inicial:" TextColor="#202020" VerticalOptions="Center" />
+                    <Border Grid.Row="3" Grid.Column="1" BackgroundColor="#F3F4F6"
+                            Stroke="#B8BEC8" StrokeThickness="1" StrokeShape="RoundRectangle 8" Padding="4,0">
+                        <Entry x:Name="MontoInicialEntry" Placeholder="$0.00" Keyboard="Numeric"
+                               TextColor="#202020" BackgroundColor="#F3F4F6" PlaceholderColor="#777777"
+                               TextChanged="MontoInicialEntry_TextChanged" />
+                    </Border>
+                    <Label Grid.Row="4" Text="Pago mensual:" TextColor="#202020" VerticalOptions="Center" />
+                    <Border Grid.Row="4" Grid.Column="1" BackgroundColor="#F3F4F6"
+                            Stroke="#B8BEC8" StrokeThickness="1" StrokeShape="RoundRectangle 8" Padding="4,0">
+                        <Entry x:Name="PagoMensualEntry" IsReadOnly="True" TextColor="#C62828"
+                               BackgroundColor="#F3F4F6" PlaceholderColor="#777777" FontAttributes="Bold" />
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Border BackgroundColor="White" Padding="18" Stroke="#E5E7EB"
+                    StrokeShape="RoundRectangle 18">
+                <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*,*"
+                      ColumnSpacing="10" RowSpacing="8">
+                    <Label Grid.Row="0" Grid.Column="0" Text="Nombre" TextColor="#202020" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="Apellido" TextColor="#202020" />
+                    <Label Grid.Row="0" Grid.Column="2" Text="Edad" TextColor="#202020" />
+                    <Border Grid.Row="1" Grid.Column="0" BackgroundColor="#F3F4F6" Stroke="#B8BEC8"
+                            StrokeThickness="1" StrokeShape="RoundRectangle 8" Padding="4,0">
+                        <Entry x:Name="NombreEntry" Placeholder="Nombre" TextColor="#202020"
+                               BackgroundColor="#F3F4F6" PlaceholderColor="#777777" />
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="1" BackgroundColor="#F3F4F6" Stroke="#B8BEC8"
+                            StrokeThickness="1" StrokeShape="RoundRectangle 8" Padding="4,0">
+                        <Entry x:Name="ApellidoEntry" Placeholder="Apellido" TextColor="#202020"
+                               BackgroundColor="#F3F4F6" PlaceholderColor="#777777" />
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="2" BackgroundColor="#F3F4F6" Stroke="#B8BEC8"
+                            StrokeThickness="1" StrokeShape="RoundRectangle 8" Padding="4,0">
+                        <Entry x:Name="EdadEntry" Placeholder="Edad" Keyboard="Numeric" TextColor="#202020"
+                               BackgroundColor="#F3F4F6" PlaceholderColor="#777777" />
+                    </Border>
+                </Grid>
+            </Border>
+
+            <Button Text="VER RESUMEN" Clicked="VerResumen_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

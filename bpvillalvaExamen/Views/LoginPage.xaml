@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="bpvillalvaExamen.Views.LoginPage"
+    BackgroundColor="#F4F6FA"
+    Title="Iniciar sesión">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="35"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <Border BackgroundColor="#C62828"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 32"
+                    HeightRequest="96"
+                    WidthRequest="96"
+                    HorizontalOptions="Center">
+                <Label Text="BP"
+                       TextColor="White"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+            </Border>
+
+            <Label Text="INICIAR SESIÓN"
+                   TextColor="Red"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+
+            <Border BackgroundColor="White"
+                    Stroke="#DDDDDD"
+                    Padding="20"
+                    StrokeShape="RoundRectangle 15">
+
+                <Grid RowDefinitions="Auto,Auto"
+                      ColumnDefinitions="110,*"
+                      RowSpacing="20"
+                      ColumnSpacing="10">
+
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           Text="Usuario:"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+
+                    <Border Grid.Row="0" Grid.Column="1"
+                            BackgroundColor="#F3F4F6"
+                            Stroke="#B8BEC8"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 8"
+                            Padding="4,0">
+                        <Entry x:Name="UsuarioEntry"
+                               Placeholder="Usuario"
+                               TextColor="#202020"
+                               BackgroundColor="#F3F4F6"
+                               PlaceholderColor="#777777" />
+                    </Border>
+
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           Text="Contraseña:"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+
+                    <Border Grid.Row="1" Grid.Column="1"
+                            BackgroundColor="#F3F4F6"
+                            Stroke="#B8BEC8"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 8"
+                            Padding="4,0">
+                        <Entry x:Name="ClaveEntry"
+                               Placeholder="Contraseña"
+                               IsPassword="True"
+                               TextColor="#202020"
+                               BackgroundColor="#F3F4F6"
+                               PlaceholderColor="#777777" />
+                    </Border>
+
+                </Grid>
+            </Border>
+
+            <Button Text="INICIAR SESIÓN"
+                    HeightRequest="55"
+                    Clicked="IniciarSesion_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
